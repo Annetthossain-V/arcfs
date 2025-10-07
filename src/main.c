@@ -10,9 +10,6 @@
 
 
 static int arcfs_mount(struct mount *mp) {
-  int* op = 0;
-  *op = 0;
-
   printf("[ArcFS::main.c] mount\n");
   return EOPNOTSUPP;
 }
