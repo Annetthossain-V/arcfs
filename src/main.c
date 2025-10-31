@@ -27,12 +27,16 @@ static int arcfs_statfs(struct mount* mp, struct statfs *sbp) {
   return EOPNOTSUPP;
 }
 
+static int arcfs_sync(struct mount* mp, int mntflags) {
+  return EOPNOTSUPP;
+}
+
 static struct vfsops arcfs_vfsops = {
   .vfs_mount = arcfs_mount,
   .vfs_unmount = arcfs_unmount,
   .vfs_root = arcfs_root,
   .vfs_statfs = arcfs_statfs,
-  // .vfs_sync =
+  .vfs_sync = arcfs_sync,
 };
 
 VFS_SET(arcfs_vfsops, arcfs, 0);
